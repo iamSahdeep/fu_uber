@@ -13,27 +13,14 @@ If you are running it, you will find some silly and annoying bugs.
 ## ScreenShots
 
 <p align="center">
-<img src="screenshots/1.jpeg" width="260" height="440">
-<img
-src="screenshots/2.jpeg" width="260" height="440">
-<img
-src="screenshots/3.jpeg" width="260" height="440">
-
-<img
-src="screenshots/4.jpeg" width="260" height="440">
-
-<img
-src="screenshots/5.jpeg" width="260" height="440">
-
-<img
-src="screenshots/6.jpeg" width="260" height="440">
-
-<img
-src="screenshots/7.jpeg" width="260" height="440">
-
-<img
-src="screenshots/8.jpeg" width="260" height="440">
-
+<img src="screenshots/1.jpeg" width="220" height="440"><img
+src="screenshots/2.jpeg" width="220" height="440"><img
+src="screenshots/3.jpeg" width="220" height="440"><img
+src="screenshots/4.jpeg" width="220" height="440"><img
+src="screenshots/5.jpeg" width="220" height="440"><img
+src="screenshots/6.jpeg" width="220" height="440"><img
+src="screenshots/7.jpeg" width="220" height="440"><img
+src="screenshots/8.jpeg" width="220" height="440">
 </p>
 
 ### Features
@@ -47,6 +34,24 @@ Some of the listed features implemented are :
 
 Every data provided like cabs, cost etc are dummy but configured to easily apply the Api's with minor changes to it.
 
+## License
+```
+Copyright [2020] [Sahdeep Singh]
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
+
 ## Author & support
 This project is created by [Sahdeep Singh](https://github.com/iamSahdeep) but with lots of support and help.
-<img src="https://cdn-images-1.medium.com/max/1200/1*2yFbiGdcACiuLGo4dMKmJw.jpeg" width="90" height="35">
+
+Made with <img src="https://cdn-images-1.medium.com/max/1200/1*2yFbiGdcACiuLGo4dMKmJw.jpeg" width="90" height="35">
