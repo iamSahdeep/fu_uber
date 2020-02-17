@@ -32,7 +32,7 @@ Some of the listed features implemented are :
 * Cab selection and cost estimator (dummy).
 * Custom map style, like Uber.
 
-Every data provided like cabs, cost etc are dummy but configured to easily apply the Api's with minor changes to it.
+Every data provided like cabs, cost etc are dummy but configured to easily apply the Api's with minor changes to it. Please add your api key's to Constant files and Manifest file.
 
 ## License
 ```
