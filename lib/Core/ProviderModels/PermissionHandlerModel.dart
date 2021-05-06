@@ -8,9 +8,9 @@ class PermissionHandlerModel extends ChangeNotifier {
   bool isLocationSerGiven = false;
 
   PermissionHandlerModel() {
-    location.changeSettings(accuracy: LocationAccuracy.LOW);
-    location.hasPermission().then((isGiven) {
-      if (isGiven) {
+    location.changeSettings(accuracy: LocationAccuracy.low);
+    location.hasPermission().then((perm) {
+      if (perm == PermissionStatus.granted) {
         isLocationPerGiven = true;
         location.serviceEnabled().then((isEnabled) {
           if (isEnabled) {
@@ -27,13 +27,13 @@ class PermissionHandlerModel extends ChangeNotifier {
     });
   }
 
-  Future<bool> checkAppLocationGranted() {
+  Future<PermissionStatus> checkAppLocationGranted() {
     return location.hasPermission();
   }
 
   requestAppLocationPermission() {
-    location.requestPermission().then((isGiven) {
-      isLocationPerGiven = isGiven;
+    location.requestPermission().then((perm) {
+      isLocationPerGiven = (perm == PermissionStatus.granted);
       notifyListeners();
     });
   }

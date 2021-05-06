@@ -10,11 +10,11 @@ class Repository {
     return AuthStatus.Authenticated;
   }
 
-  static Future<int> sendOTP(String phone) async {
+  static Future<int> sendOTP(String? phone) async {
     return await ApiProvider.sendOtpToUser(phone);
   }
 
-  static Future<int> verifyOtp(String text) async {
+  static Future<int> verifyOtp(String? text) async {
     //just returning 1
     //somehow check the otp
     return await ApiProvider.verifyOtp(text);
@@ -25,7 +25,7 @@ class Repository {
     nearbyDriverStreamController.sink.add(ApiProvider.getNearbyDrivers());
   }
 
-  static void addFavPlacesToDataBase(List<UserPlaces> data) {
+  static void addFavPlacesToDataBase(List<UserPlaces>? data) {
     //
   }
 }

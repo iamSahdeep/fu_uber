@@ -8,7 +8,7 @@ class NoInternetWidget extends StatefulWidget {
 }
 
 class _NoInternetWidgetState extends State<NoInternetWidget> {
-  bool isConnected;
+  bool? isConnected;
 
   @override
   void initState() {

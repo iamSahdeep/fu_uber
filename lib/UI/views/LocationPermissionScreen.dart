@@ -15,9 +15,9 @@ class LocationPermissionScreen extends StatefulWidget {
 }
 
 class _LocationPermissionScreenState extends State<LocationPermissionScreen>
-    with SingleTickerProviderStateMixin {
-  AnimationController loadingController;
-  Animation<double> animation;
+    with TickerProviderStateMixin {
+  late AnimationController loadingController;
+  Animation<double>? animation;
 
   @override
   void dispose() {
@@ -104,11 +104,13 @@ class _LocationPermissionScreenState extends State<LocationPermissionScreen>
 
   @override
   void didChangeDependencies() {
+    super.didChangeDependencies();
     final mapModel = Provider.of<MapModel>(context);
     if (mapModel.currentPosition != null) {
-      Navigator.of(context).pushReplacementNamed(MainScreen.route);
+      WidgetsBinding.instance?.addPostFrameCallback((_) {
+        Navigator.of(context).pushReplacementNamed(MainScreen.route);
+      });
     }
-    super.didChangeDependencies();
   }
 }
 
@@ -118,10 +120,10 @@ class SpringEffect extends StatefulWidget {
 }
 
 class SpringState extends State<SpringEffect> with TickerProviderStateMixin {
-  AnimationController controller;
-  AnimationController controller2;
-  Animation<double> animation;
-  SpringSimulation simulation;
+  late AnimationController controller;
+  late AnimationController controller2;
+  late Animation<double> animation;
+  late SpringSimulation simulation;
   double _position = 0;
 
   @override

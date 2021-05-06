@@ -6,7 +6,7 @@ class ErrorDialogue extends StatelessWidget {
   final String errorMessage;
 
   const ErrorDialogue(
-      {Key key, @required this.errorMessage, @required this.errorTitle})
+      {Key? key, required this.errorMessage, required this.errorTitle})
       : super(key: key);
 
   @override

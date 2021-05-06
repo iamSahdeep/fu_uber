@@ -6,7 +6,7 @@ class UserDetails {
   String name;
   String email;
   String phone;
-  String ongoingRide;
+  String? ongoingRide;
   List<String> previousRides;
   List<UserPlaces> favouritePlaces;
 

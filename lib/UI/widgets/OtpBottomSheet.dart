@@ -33,8 +33,6 @@ class OtpBottomSheet extends StatelessWidget {
             maxLength: 4,
             hasError: verificationModel.ifOtpHasError,
             maskCharacter: "*",
-            pinCodeTextFieldLayoutType:
-            PinCodeTextFieldLayoutType.AUTO_ADJUST_WIDTH,
             wrapAlignment: WrapAlignment.start,
             pinBoxDecoration:
             ProvidedPinBoxDecoration.underlinedPinBoxDecoration,

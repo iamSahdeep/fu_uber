@@ -27,9 +27,9 @@ class MainScreen extends StatefulWidget {
   _MainScreenState createState() => _MainScreenState();
 }
 
-class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
-  AnimationController loadingController;
-  Animation<double> animation;
+class _MainScreenState extends State<MainScreen> with SingleTickerProviderStateMixin {
+  late AnimationController loadingController;
+  Animation<double>? animation;
 
   @override
   void initState() {
@@ -48,8 +48,8 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
 
   @override
   void dispose() {
-    super.dispose();
     loadingController.dispose();
+    super.dispose();
   }
 
   @override
@@ -60,7 +60,7 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
 
     return Material(
       child: Scaffold(
-          resizeToAvoidBottomPadding: true,
+          resizeToAvoidBottomInset: true,
           body: Stack(
             children: <Widget>[
               SlidingUpPanel(
@@ -90,7 +90,7 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
                 borderRadius: ShapeUtils.borderRadiusGeometry,
                 body: GoogleMap(
                   initialCameraPosition: CameraPosition(
-                      target: mapModel.currentPosition,
+                      target: mapModel.currentPosition!,
                       zoom: mapModel.currentZoom),
                   onMapCreated: mapModel.onMapCreated,
                   mapType: MapType.normal,

@@ -28,32 +28,32 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<PermissionHandlerModel>(
-          builder: (context) => PermissionHandlerModel(),
+          create: (context) => PermissionHandlerModel(),
         ),
         ChangeNotifierProvider<MapModel>(
-          builder: (context) => MapModel(),
+          create: (context) => MapModel(),
         ),
         ChangeNotifierProxyProvider<MapModel, RideBookedModel>(
-            initialBuilder: (_) => RideBookedModel(),
-            builder: (_, foo, bar) {
-              bar.originLatLng = foo.pickupPosition;
+            create: (_) => RideBookedModel(),
+            update: (_, foo, bar) {
+              bar!.originLatLng = foo.pickupPosition;
               bar.destinationLatLng = foo.destinationPosition;
               return bar;
             }),
         ChangeNotifierProvider<VerificationModel>(
-          builder: (context) => VerificationModel(),
+          create: (context) => VerificationModel(),
         ),
         ChangeNotifierProvider<NearbyDriversModel>(
-          builder: (context) => NearbyDriversModel(),
+          create: (context) => NearbyDriversModel(),
         ),
         ChangeNotifierProvider<UserDetailsModel>(
-          builder: (context) => UserDetailsModel(),
+          create: (context) => UserDetailsModel(),
         ),
         ChangeNotifierProvider<CurrentRideCreationModel>(
-          builder: (context) => CurrentRideCreationModel(),
+          create: (context) => CurrentRideCreationModel(),
         ),
         ChangeNotifierProvider<UINotifiersModel>(
-          builder: (context) => UINotifiersModel(),
+          create: (context) => UINotifiersModel(),
         )
       ],
       child: MaterialApp(

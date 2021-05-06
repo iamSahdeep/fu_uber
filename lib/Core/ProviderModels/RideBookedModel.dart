@@ -15,14 +15,14 @@ class RideBookedModel extends ChangeNotifier {
   /// Tag for Logs
   static const TAG = "MapModel";
 
-  GoogleMapController _mapController;
+  late GoogleMapController _mapController;
   MapRepository mapRepository = MapRepository();
 
   /// Origin Latitude and Longitude
-  LatLng originLatLng;
+  LatLng? originLatLng;
 
   /// Destination Latitude and Longitude
-  LatLng destinationLatLng;
+  LatLng? destinationLatLng;
 
   /// Default Camera Zoom
   double currentZoom = 19;
@@ -68,9 +68,9 @@ class RideBookedModel extends ChangeNotifier {
 
   void createOriginDestinationRoute() async {
     await mapRepository
-        .getRouteCoordinates(originLatLng, destinationLatLng)
+        .getRouteCoordinates(originLatLng!, destinationLatLng!)
         .then((route) {
-      createCurrentRoute(route, Constants.currentRoutePolylineId,
+      createCurrentRoute(route!, Constants.currentRoutePolylineId,
           ConstantColors.PrimaryColor, 3);
       notifyListeners();
     });
@@ -78,9 +78,9 @@ class RideBookedModel extends ChangeNotifier {
 
   void createOriginDriverLocationRoute() async {
     await mapRepository
-        .getRouteCoordinates(originLatLng, driverLatLng)
+        .getRouteCoordinates(originLatLng!, driverLatLng)
         .then((route) {
-      createCurrentRoute(route, Constants.driverOriginPolyId, Colors.green, 5);
+      createCurrentRoute(route!, Constants.driverOriginPolyId, Colors.green, 5);
       notifyListeners();
     });
   }
@@ -101,14 +101,14 @@ class RideBookedModel extends ChangeNotifier {
   void addAllMarkers() async {
     _markers.add(Marker(
         markerId: MarkerId(Constants.pickupMarkerId),
-        position: originLatLng,
+        position: originLatLng!,
         flat: true,
         icon: BitmapDescriptor.fromBytes(
           await Utils.getBytesFromAsset("images/pickupIcon.png", 70),
         )));
     _markers.add(Marker(
         markerId: MarkerId(Constants.destinationMarkerId),
-        position: destinationLatLng,
+        position: destinationLatLng!,
         flat: true,
         icon: BitmapDescriptor.fromBytes(
           await Utils.getBytesFromAsset("images/destinationIcon.png", 70),

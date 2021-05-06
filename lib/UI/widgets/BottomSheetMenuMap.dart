@@ -57,11 +57,13 @@ class BottomSheetMapMenu extends StatelessWidget {
                       ),
                     ),
                     CarouselSlider(
-                      enableInfiniteScroll: false,
-                      initialPage: 1,
-                      enlargeCenterPage: true,
-                      scrollDirection: Axis.horizontal,
-                      onPageChanged: currentRideCreationModel.carTypeChanged,
+                      options: CarouselOptions(
+                        enableInfiniteScroll: false,
+                        initialPage: 1,
+                        enlargeCenterPage: true,
+                        scrollDirection: Axis.horizontal,
+                        onPageChanged: currentRideCreationModel.carTypeChanged,
+                      ),
                       items: DemoData.typesOfCar.map((i) {
                         return Builder(
                           builder: (BuildContext context) {
@@ -110,7 +112,7 @@ class BottomSheetMapMenu extends StatelessWidget {
                     uiNotifiersModel.searchingRideNotify();
                     Future.delayed(Duration(seconds: 5), () {
                       uiNotifiersModel.searchingRideNotify();
-                      navigatorKey.currentState
+                      navigatorKey.currentState!
                           .pushReplacementNamed(OnGoingRideScreen.route);
                     });
                   },

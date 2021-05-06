@@ -8,7 +8,7 @@ class Utils {
   // !DECODE POLY
   static List decodePoly(String poly) {
     var list = poly.codeUnits;
-    var lList = new List();
+    var lList = [];
     int index = 0;
     int len = poly.length;
     int c = 0;
@@ -55,7 +55,7 @@ class Utils {
     Codec codec = await instantiateImageCodec(data.buffer.asUint8List(),
         targetWidth: width);
     FrameInfo fi = await codec.getNextFrame();
-    return (await fi.image.toByteData(format: ImageByteFormat.png))
+    return (await fi.image.toByteData(format: ImageByteFormat.png))!
         .buffer
         .asUint8List();
   }

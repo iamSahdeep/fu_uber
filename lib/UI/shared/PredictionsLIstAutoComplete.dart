@@ -11,11 +11,11 @@ typedef onListItemTap = void Function(Prediction prediction);
 
 class PredictionListAutoComplete extends StatefulWidget {
   final TextField textField;
-  final List<Prediction> data;
-  final onListItemTap itemTap;
+  final List<Prediction>? data;
+  final onListItemTap? itemTap;
 
   PredictionListAutoComplete(
-      {Key key, @required this.textField, @required this.data, this.itemTap})
+      {Key? key, required this.textField, required this.data, this.itemTap})
       : super(key: key);
 
   @override
@@ -33,17 +33,17 @@ class _PredictionListAutoCompleteState
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
         widget.textField,
-        widget.data != null && widget.data.isNotEmpty
+        widget.data != null && widget.data!.isNotEmpty
             ? Column(
           children: <Widget>[
             ListView.builder(
                 shrinkWrap: true,
-                itemCount: widget.data.length,
+                itemCount: widget.data!.length,
                 itemBuilder: (BuildContext ctxt, int index) {
                   return InkResponse(
-                      onTap: () => widget.itemTap(widget.data[index]),
+                      onTap: () => widget.itemTap!(widget.data![index]),
                       child: PredictionItemView(
-                          prediction: widget.data[index]));
+                          prediction: widget.data![index]));
                 }),
             ListTile(
               title: Text("Powered By Google"),

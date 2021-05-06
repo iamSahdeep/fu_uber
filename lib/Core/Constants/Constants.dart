@@ -1,6 +1,6 @@
 class Constants {
-  static const mapApiKey = "add your api key";
-  static const anotherApiKey = "add your api key";
+  static const mapApiKey = "";
+  static const anotherApiKey = "";
   static const destinationMarkerId = "DestinationMarker";
   static const pickupMarkerId = "PickupMarker";
   static const currentLocationMarkerId = "currentLocationMarker";
